@@ -1,0 +1,7 @@
+__pycache__/
+ *.pyc
+ *.log
+vision/captures/
+ vision/fsm_captures/
+ question/
+ .claude/
