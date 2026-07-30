@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""2025 电赛 E 题：A4 靶纸黑色外框实时定位。
 
-赛题规定：A4 紫外感光靶纸四周使用 1.8 cm 宽黑色胶带勾勒外轮廓，
-靶心和红色圆线宽均不超过 0.1 cm。因此远距离不检测红点，而检测黑色 A4 外框。
-
-运行：
-  python3 rectangle_target.py --camera 4
-
-按键：q / ESC 退出；s 保存原图和结果图；r 重置滑条。
-"""
 
 from __future__ import annotations
 

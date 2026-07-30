@@ -1,4 +1,4 @@
- 目前实测推荐参数：
+ 目前实测参数：
 
   Black max   = 100
   White S max = 120
@@ -22,10 +22,10 @@
   target height  = 210 mm
   aim offset x   = 0 px
   aim offset y   = 0 px
+  
+python3 vision/aiming_state_machine.py     --camera 4     --port /dev/ttyACM0     --aim-offset-x 0     --aim-offset-y 33 --aim-offset-x 0
 
   运行命令：
-
- 视觉端使用这个稳定版程序：
 
   ROBOTZ2026/vision/aiming_state_machine_stable.py
 
@@ -40,8 +40,6 @@
     --send-rate 20 \
     --lock-threshold 10
 
-python3 vision/aiming_state_machine.py     --camera 4     --port /dev/ttyACM0     --aim-offset-x 0     --aim-offset-y 33 --aim-offset-x 0
-  整车联调时不要加 --auto-start。视觉程序启动后先处于 WAIT，STM32停车并转到预置角后发送：
 
   START,A
 
@@ -89,19 +87,5 @@ python3 vision/aiming_state_machine.py     --camera 4     --port /dev/ttyACM0   
     
     
     
-    
-    最终执行
 python3 vision/aiming_state_machine_stable.py     --camera 4     --port /dev/ttyACM0     --baudrate 115200     --send-rate 20     --lock-threshold 10 --aim-offset-y 33 --lock-frame 30
-
-python3 vision/aiming_state_machine_stable_point_offsets.py \
-    --camera 4 \
-    --port /dev/ttyACM0 \
-    --baudrate 115200 \
-    --send-rate 20 \
-    --lock-threshold 10 \
-    --lock-frames 15 \
-    --jitter-limit 8 \
-    --aim-offset-x 0 \
-    --aim-offset-y 33
-
 
