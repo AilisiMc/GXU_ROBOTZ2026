@@ -13,7 +13,6 @@
 | `Aiming_Stable.py` | 当前稳定版主程序，也是推荐运行入口。 |
 | `Aiming_Test.py` | 早期状态机测试版本，可用于对照状态转换和基础识别流程。 |
 | `Origin.py` | 最初的 A4 靶纸识别程序，用于观察基础识别效果。 |
-| `source_style_target.py` | 采用最大黑色连通块思路的对照识别程序。 |
 | `target_test.py` | 红色靶心检测测试工具。 |
 | `serial_diagnose.py` | 独立串口诊断工具，可分别测试 CRLF 和 LF 行尾。 |
 | `aiming_state_machine_fixed.py` | 为旧版状态机准备的 CRLF 协议兼容入口；稳定版运行时使用 `Aiming_Stable.py`。 |
