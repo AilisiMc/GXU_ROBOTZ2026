@@ -2,6 +2,13 @@ __pycache__/
  *.pyc
  *.log
 vision/captures/
- vision/fsm_captures/
- question/
- .claude/
+vision/fsm_captures/
+vision/pd_logs/
+question/
+.claude/
+firmware/
+12/
+/*.jpg
+/*.png
+/*.pdf
+docs/*.zip

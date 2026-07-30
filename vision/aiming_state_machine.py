@@ -43,12 +43,12 @@ A4_SHORT_LONG_RATIO = 210.0 / 297.0
 # (21 - 2*1.8) : (29.7 - 2*1.8) = 17.4 : 26.1。
 A4_INNER_SHORT_LONG_RATIO = 174.0 / 261.0
 DEFAULTS = {
-    "Black max": 85,
+    "Black max": 100,
     # USB 摄像头自动白平衡后，白纸在部分角度会明显偏蓝，S 可达到约 100。
-    "White S max": 110,
-    "White V min": 105,
+    "White S max": 120,
+    "White V min": 115,
     "Min area": 700,
-    "Close size": 5,
+    "Close size": 7,
     "Hold frames": 5,
 }
 

@@ -25,24 +25,83 @@
 
   运行命令：
 
-  cd ~/ROBOTZ2026
+ 视觉端使用这个稳定版程序：
 
-  python3 vision/aiming_state_machine.py \
+  ROBOTZ2026/vision/aiming_state_machine_stable.py
+
+  在 Ubuntu 终端运行：
+
+  cd /home/fishros/ROBOTZ2026
+
+  python3 vision/aiming_state_machine_stable.py \
+    --camera 4 \
+    --port /dev/ttyACM0 \
+    --baudrate 115200 \
+    --send-rate 20 \
+    --lock-threshold 10
+
+python3 vision/aiming_state_machine.py     --camera 4     --port /dev/ttyACM0     --aim-offset-x 0     --aim-offset-y 33 --aim-offset-x 0
+  整车联调时不要加 --auto-start。视觉程序启动后先处于 WAIT，STM32停车并转到预置角后发送：
+
+  START,A
+
+  视觉终端应显示：
+
+  [FSM] RX START point=A
+
+  随后视觉端以20 Hz发送：
+
+  AIM,1,0,error_x,error_y
+  AIM,1,1,error_x,error_y
+
+  打靶结束后STM32发送：
+
+  STOP
+
+  终端应显示：
+
+  [FSM] RX STOP -> WAIT
+
+  如果摄像头不是 /dev/video4，先执行：
+
+  ls -l /dev/video*
+
+  如果串口不是 /dev/ttyACM0，执行：
+
+  ls -l /dev/ttyACM* /dev/ttyUSB*
+
+  仅测试摄像头和识别、不连接STM32时运行：
+
+  cd /home/fishros/ROBOTZ2026
+
+  python3 vision/aiming_state_machine_stable.py \
     --camera 4 \
     --dry-run \
-    --auto-start A \
-    --lock-threshold 10 \
-    --lock-frames 5 \
-    --jitter-limit 8 \
-    --laser-offset-x-mm 0 \
-    --laser-offset-y-mm 32 \
-    --target-width-mm 297 \
-    --target-height-mm 210
-    4. 不要在正式运行时使用--dry-run
+    --auto-start A
 
-  --dry-run每秒打印约20行，4分钟约4800行。一般不会卡死，但终端滚动和大量输出会浪
-  费资源。连接STM32后使用：
 
 
     --port /dev/ttyACM0
+    
+    
+    
+    
+    
+    
+    
+    
+    最终执行
+python3 vision/aiming_state_machine_stable.py     --camera 4     --port /dev/ttyACM0     --baudrate 115200     --send-rate 20     --lock-threshold 10 --aim-offset-y 33 --lock-frame 30
+
+python3 vision/aiming_state_machine_stable_point_offsets.py \
+    --camera 4 \
+    --port /dev/ttyACM0 \
+    --baudrate 115200 \
+    --send-rate 20 \
+    --lock-threshold 10 \
+    --lock-frames 15 \
+    --jitter-limit 8 \
+    --aim-offset-x 0 \
+    --aim-offset-y 33
+
 
